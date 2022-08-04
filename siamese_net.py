@@ -4,7 +4,11 @@ import numpy as np
 import cv2
 import os
 
-from config import EPOCHS, LEARNING_RATE, IMG_SIZE, VALIDATION_SPLIT
+# from config import EPOCHS, LEARNING_RATE, IMG_SIZE, VALIDATION_SPLIT
+EPOCHS = 20
+LEARNING_RATE = 1e-3
+IMG_SIZE = 64
+VALIDATION_SPLIT = 0.2
 
 '''
 Implementation of the siamese network to compare images of flies
@@ -136,8 +140,8 @@ def generate_train_image_pairs(data, pos_imgs, neg_imgs):
 if __name__ == '__main__':
   
   # loading data
-  positive_imgs_path = '/home/petar/Zentrixlab/data/training_data/'
-  negative_imgs_path = '/home/petar/Zentrixlab/data/training_data_other/'
+  positive_imgs_path = ''
+  negative_imgs_path = ''
 
   data_positive = load_data(positive_imgs_path, 1)
   data_negative = load_data(negative_imgs_path, 0)
